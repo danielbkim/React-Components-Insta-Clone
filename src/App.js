@@ -19,6 +19,7 @@ const App = () => {
   // To make the search bar work (which is stretch) we'd need another state to hold the search term.
   // const [ searchBar, setSearchBar ]
 
+  // why build this all the way out here when it's being used so far down the chain?
   const likePost = postId => {
     /*
       This function serves the purpose of increasing the number of likes by one, of the post with a given id.
@@ -36,8 +37,10 @@ const App = () => {
       setPosts(posts.map(post => {
         // how would you return using ternary?
         if(post.id === postId) {
-          console.log(post);
+          // console.log(post);
+          return { ...post, likes: post.likes + 1 };
         }
+        return post;
       }));
   };
 
