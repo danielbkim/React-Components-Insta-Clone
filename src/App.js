@@ -38,6 +38,7 @@ const App = () => {
         // how would you return using ternary?
         if(post.id === postId) {
           // console.log(post);
+          // spread operator the post, but then changes the likes portion of the object
           return { ...post, likes: post.likes + 1 };
         }
         return post;
